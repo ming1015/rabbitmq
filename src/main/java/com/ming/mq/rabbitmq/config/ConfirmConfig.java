@@ -67,12 +67,13 @@ public class ConfirmConfig {
         //广播交换机，路由地址不需要，绑定的队列都会收到
         return BindingBuilder.bind(queue).to(exchange);
     }
-}
 
- /*   @Bean
+    @Bean
     public Binding warningBinding(
             @Qualifier("warningQueue") Queue queue,
             @Qualifier("backupExchange") FanoutExchange exchange
-    ) {*/
+    ) {
         //广播交换机，路由地址不需要，绑定的队列都会收到
-        //return BindingBuilder.bind(queue).to(exch
+        return BindingBuilder.bind(queue).to(exchange);
+    }
+}
