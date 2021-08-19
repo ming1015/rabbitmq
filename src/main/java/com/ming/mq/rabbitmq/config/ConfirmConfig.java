@@ -76,4 +76,6 @@ public class ConfirmConfig {
         //广播交换机，路由地址不需要，绑定的队列都会收到
         return BindingBuilder.bind(queue).to(exchange);
     }
+
+    //123
 }
