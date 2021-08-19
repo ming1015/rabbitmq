@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * ClassName:ConfirmConfig
  * Package:com.ming.mq.rabbitmq.config
- * Description:备份交换机优先级
+ * Description:备份交换机优先级高于队列回退
  *
  * @Date:2021/8/16 14:09
  * Author:ming
@@ -67,13 +67,12 @@ public class ConfirmConfig {
         //广播交换机，路由地址不需要，绑定的队列都会收到
         return BindingBuilder.bind(queue).to(exchange);
     }
+}
 
-    @Bean
+ /*   @Bean
     public Binding warningBinding(
             @Qualifier("warningQueue") Queue queue,
             @Qualifier("backupExchange") FanoutExchange exchange
-    ) {
+    ) {*/
         //广播交换机，路由地址不需要，绑定的队列都会收到
-        return BindingBuilder.bind(queue).to(exchange);
-    }
-}
+        //return BindingBuilder.bind(queue).to(exch
